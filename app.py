@@ -14,81 +14,116 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for modern glassmorphism aesthetic
+# Custom CSS for clean, high-contrast light theme design
 st.markdown("""
 <style>
-    /* Dark glassmorphic background & main styling */
+    /* Clean light background & main text styling */
     .stApp {
-        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
-        color: #f8fafc;
+        background: #f8fafc;
+        color: #0f172a;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    /* Force all text elements to have high contrast */
+    p, span, label, div {
+        color: #1e293b !important;
     }
     
     /* Header Card */
     .main-header {
-        background: rgba(30, 41, 59, 0.7);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
         border-radius: 16px;
         padding: 24px;
         margin-bottom: 24px;
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
     }
     
     .main-title {
         font-size: 2.2rem;
-        font-weight: 700;
-        background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        font-weight: 800;
+        color: #1e3a8a !important;
         margin-bottom: 8px;
+        letter-spacing: -0.5px;
     }
 
     .sub-title {
-        color: #94a3b8;
+        color: #475569 !important;
         font-size: 1.05rem;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    /* Sidebar Styling */
+    [data-testid="stSidebar"] {
+        background-color: #ffffff !important;
+        border-right: 1px solid #e2e8f0;
+    }
+    
+    [data-testid="stSidebar"] p, [data-testid="stSidebar"] span, [data-testid="stSidebar"] li {
+        color: #334155 !important;
     }
 
     /* Metric Cards */
     .metric-card {
-        background: rgba(30, 41, 59, 0.6);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
         border-radius: 12px;
         padding: 16px;
         text-align: center;
-        transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-    
-    .metric-card:hover {
-        transform: translateY(-2px);
-        border-color: rgba(129, 140, 248, 0.4);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
     
     .metric-value {
         font-size: 1.8rem;
         font-weight: 700;
-        color: #38bdf8;
+        color: #2563eb !important;
     }
     
     .metric-label {
         font-size: 0.85rem;
-        color: #94a3b8;
+        color: #64748b !important;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        font-weight: 600;
+    }
+
+    /* Tab navigation text contrast */
+    button[data-baseweb="tab"] p {
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        color: #475569 !important;
+    }
+
+    button[aria-selected="true"] p {
+        color: #2563eb !important;
     }
 
     /* Result Badges */
-    .badge-security { background-color: #ef4444; color: white; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
-    .badge-workflow { background-color: #f59e0b; color: white; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
-    .badge-system { background-color: #3b82f6; color: white; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
-    .badge-deprecation { background-color: #8b5cf6; color: white; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
-    .badge-http { background-color: #10b981; color: white; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
-    .badge-user { background-color: #06b6d4; color: white; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
+    .badge-security { background-color: #dc2626; color: white !important; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
+    .badge-workflow { background-color: #d97706; color: white !important; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
+    .badge-system { background-color: #2563eb; color: white !important; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
+    .badge-deprecation { background-color: #7c3aed; color: white !important; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
+    .badge-http { background-color: #059669; color: white !important; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
+    .badge-user { background-color: #0891b2; color: white !important; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
 
     /* Custom Buttons */
     .stButton>button {
         border-radius: 8px;
         font-weight: 600;
+        background-color: #2563eb !important;
+        color: #ffffff !important;
+        border: none !important;
         transition: all 0.2s ease;
+    }
+    
+    .stButton>button p {
+        color: #ffffff !important;
+    }
+
+    .stButton>button:hover {
+        background-color: #1d4ed8 !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
     }
 </style>
 """, unsafe_allow_html=True)
