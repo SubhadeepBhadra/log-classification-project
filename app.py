@@ -95,7 +95,11 @@ st.markdown("""
 
 # Sidebar Information
 with st.sidebar:
-    st.image("https://img.icons8.com/isometric-folders/100/logs.png", width=70)
+    logo_path = "assets/logo.png"
+    if os.path.exists(logo_path):
+        st.image(logo_path, width=75)
+    else:
+        st.markdown("<h1 style='margin:0;'>⚡</h1>", unsafe_allow_html=True)
     st.title("Log Classifier")
     st.caption("Hybrid ML & LLM Log Classification Engine")
     
