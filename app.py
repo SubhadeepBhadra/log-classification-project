@@ -91,7 +91,7 @@ st.markdown("""
         transition: all 0.2s ease;
     }
 </style>
-""", unsafe_allow_scheme_instructions=True)
+""", unsafe_allow_html=True)
 
 # Sidebar Information
 with st.sidebar:
@@ -121,7 +121,7 @@ st.markdown("""
     <div class="main-title">⚡ Log Classification Intelligence Platform</div>
     <div class="sub-title">Automated real-time categorization of system, security, workflow, and API logs using hybrid Regex, BERT Embedding, and Groq LLM models.</div>
 </div>
-""", unsafe_allow_scheme_instructions=True)
+""", unsafe_allow_html=True)
 
 # Navigation Tabs
 tab1, tab2, tab3 = st.tabs(["📁 Batch CSV Classifier", "⚡ Real-Time Log Tester", "📡 API Endpoint & Architecture"])
@@ -137,7 +137,7 @@ with tab1:
     with col1:
         uploaded_file = st.file_uploader("Choose a CSV log file", type=["csv"])
     with col2:
-        st.markdown("<br>", unsafe_allow_scheme_instructions=True)
+        st.markdown("<br>", unsafe_allow_html=True)
         use_sample = st.button("📥 Load Sample CSV (`test.csv`)", use_container_width=True)
 
     df_input = None
@@ -177,7 +177,7 @@ with tab1:
             m4.metric("Workflow Errors", counts.get("Workflow Error", 0))
             m5.metric("Deprecation Warnings", counts.get("Deprecation Warning", 0))
 
-            st.markdown("<br>", unsafe_allow_scheme_instructions=True)
+            st.markdown("<br>", unsafe_allow_html=True)
 
             # Interactive View and Download
             col_left, col_right = st.columns([2, 1])
