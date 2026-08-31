@@ -8,6 +8,11 @@ A production-grade, hybrid ML & LLM Log Classification System that categorizes l
 ![Groq](https://img.shields.io/badge/Groq_LLM-F05032?style=for-the-badge)
 ![Scikit-Learn](https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Click_Here_to_Open-green?style=for-the-badge)](https://da2a8e94dd87dd.lhr.life)
+
+> 🚀 **Live Demo URL**: [https://da2a8e94dd87dd.lhr.life](https://da2a8e94dd87dd.lhr.life)
+
+
 ---
 
 ## 🌟 Key Features
